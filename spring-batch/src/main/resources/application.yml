@@ -1,0 +1,22 @@
+server:
+  port: ${BATCH_SERVICE_PORT:8001}
+  servlet:
+    context-path: /batch-service
+spring:
+  application:
+    name: spring-batch
+  datasource:
+    url: jdbc:postgresql://localhost:5432/batchdb
+    username: batch_user
+    password: batch_pass
+    driver-class-name: org.postgresql.Driver
+
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
+logging:
+  level:
+    org.springframework.batch: INFO
